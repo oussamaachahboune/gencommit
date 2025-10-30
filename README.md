@@ -4,17 +4,17 @@
 
 ---
 
-## 🚀 Features
+## Features
 
-• Reads your **staged Git diff** (including new files)  
-• Uses **Claude AI** to generate **conventional commit messages**  
-• Lets you **accept, edit, or reject** interactively  
-• Works offline in **mock mode** (`--mock`) — produces **simulated (fictive)** commit messages for testing  
-• Simple, fast, and works in any Git repository
+- Reads your **staged Git diff** (including new files)  
+- Uses **Claude AI** to generate **conventional commit messages**  
+- Lets you **accept, edit, or reject** interactively  
+- Works offline in **mock mode** (`--mock`) — produces **simulated (fictive)** commit messages for testing  
+- Simple, fast, and works in any Git repository
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ```bash
 # Clone the repository
@@ -29,7 +29,7 @@ pip install -e .
 
 ---
 
-## 💡 Usage
+## Usage
 
 Run it inside any Git project **after staging changes**:
 
@@ -50,7 +50,7 @@ Do you want to (a)ccept, (e)dit, or (r)eject?
 
 ---
 
-## 🧰 Flags
+## Flags
 
 | Flag        | Description                                                        |
 | ----------- | ------------------------------------------------------------------ |
@@ -62,7 +62,7 @@ Do you want to (a)ccept, (e)dit, or (r)eject?
 
 ---
 
-## 🔑 Environment
+## Environment
 
 | Variable            | Description                                  |
 | ------------------- | -------------------------------------------- |
@@ -73,7 +73,7 @@ Do you want to (a)ccept, (e)dit, or (r)eject?
 
 ---
 
-## 🧠 Requirements
+## Requirements
 
 - Python 3.8+
 - Git
