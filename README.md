@@ -1,6 +1,6 @@
 # 🧠 GenCommit
 
-> **AI-powered Git commit assistant** that generates smart, clean commit messages using **Anthropic Claude API** — directly from your terminal.
+> **AI-powered Git commit assistant** built with Python that generates clean, conventional commit messages using the **Anthropic Claude API** — right from your terminal.
 
 ---
 
