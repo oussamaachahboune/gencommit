@@ -25,7 +25,7 @@ cd gencommit
 pip install -e .
 ```
 
-> 💡 Once installed, you can run `gencommit` from anywhere in your terminal.
+> Once installed, you can run `gencommit` from anywhere in your terminal.
 
 ---
 
@@ -69,7 +69,7 @@ Do you want to (a)ccept, (e)dit, or (r)eject?
 | `ANTHROPIC_API_KEY` | Required — your Claude API key               |
 | `EDITOR`            | Optional — your text editor (default: `vim`) |
 
-> ⚠️ Keep your API key private. Never commit it to GitHub or share it publicly.
+> Always keep your API key secret. Never expose it in public repositories.
 
 ---
 
