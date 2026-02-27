@@ -1,4 +1,3 @@
 .vscode/
-build/
 gencommit.egg-info/
-test/
+*.pyc

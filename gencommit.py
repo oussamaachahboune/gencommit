@@ -28,11 +28,18 @@ def debug(msg: str) -> None:
 
 
 def run_cmd(cmd: List[str]) -> str:
-    """Run a shell command and return stdout."""
+    """Run a shell command and return stdout (UTF-8 safe on Windows)."""
     debug(f"run_cmd: {' '.join(cmd)}")
     try:
-        completed = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        return completed.stdout
+        completed = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+        return completed.stdout or ""
     except subprocess.CalledProcessError as e:
         raise SystemExit(f"Error running command {' '.join(cmd)}: {e.stderr or e}")
 
@@ -158,6 +165,8 @@ def call_claude_api(prompt: str, api_key: str, model: str, timeout: int = 30) ->
     debug(f"Sending request to Claude API with model={model}...")
     try:
         resp = requests.post(url, headers=headers, json=body, timeout=timeout)
+        if resp.status_code != 200:
+            print(f"API Error Response: {resp.text}", file=sys.stderr)
         resp.raise_for_status()
         data = resp.json()
         return data["content"][0]["text"].strip()
@@ -290,7 +299,7 @@ def main() -> None:
     chosen_model = args.model
     if not use_mock and not chosen_model:
         models = get_models_from_api(api_key)
-        chosen_model = pick_preferred_model(models) or "claude-sonnet-4-5-20250929"
+        chosen_model = pick_preferred_model(models) or "claude-sonnet-4-5"
         debug(f"Using model: {chosen_model}")
 
     raw_message = (
